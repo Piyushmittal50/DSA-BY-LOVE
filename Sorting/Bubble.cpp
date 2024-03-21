@@ -1,5 +1,7 @@
 #include<iostream>
-
+// compare two values
+// at each pass last value is always sorted ,
+// thats why at each pass , we decrease the value by 1
 using namespace std;
 void swapfunction(int &start,int &end){
     int temp;
@@ -9,6 +11,8 @@ void swapfunction(int &start,int &end){
 }
 void bubble(int arr[],int n){
     for(int i=0;i<n-1;i++){
+        // without i it does not effect
+        // but it saves some time , because every pass it skip one element ,because it is already sorted
         for(int j=0;j<n-i-1;j++){
               if(arr[j]>arr[j+1]){
                 swapfunction(arr[j],arr[j+1]);
