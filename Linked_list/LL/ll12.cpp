@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stack>
 using namespace std;
 class node{
 public:
@@ -9,9 +10,30 @@ node(int data){
     this->next = NULL;
 }
 };
+// way 1
 bool isPalindrome(node* &head){
+    node* curr = head;
+    node* temp = head;
+    stack<int> s;
+    while(temp!=NULL){
+        s.push(temp->data);
+        temp = temp->next;
+    }
+    // now compare 
+    while(!s.empty()){
+        int ele = s.top();
+        if(curr->data!=ele){
+            return false;
+        }
+        s.pop();
+        curr = curr->next;
+    }
+    return true;
+}
+// way 2
+bool isPalindrome01(node* &head){
     if(head==NULL||head->next==NULL){
-        return head;
+        return true;
     }
 
     // findout kara hai middle node
@@ -65,6 +87,11 @@ int main(){
     six->next = NULL;
     print(head);
     if(isPalindrome(head)){
+        cout<<"LL is palindrome"<<endl;
+    }
+    else cout<<"LL is not "<<endl;
+
+    if(isPalindrome01(head)){
         cout<<"LL is palindrome"<<endl;
     }
     else cout<<"LL is not "<<endl;

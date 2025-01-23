@@ -77,7 +77,7 @@ int main(){
        node* second = new node(20);
        node* third = new node(30);
        node* fourth = new node(20);
-       node* fifth = new node(20);
+       node* fifth = new node(10);
        
        
        head->next = second;

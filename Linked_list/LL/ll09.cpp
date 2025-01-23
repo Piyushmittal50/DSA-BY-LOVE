@@ -72,6 +72,6 @@ int main(){
     sixth->next = NULL;
     print(head);
     cout<<"After K nodes : "<<endl;
-    node* ans = KnodesReverse(head,2);
+    node* ans = KnodesReverse(head,4);
     print(ans);
 }
