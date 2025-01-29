@@ -22,6 +22,23 @@ long long int find(int n){
     }
     return -1;
 }
+
+double findpre(int number,int pre,double integer){
+    int i = 0;
+    double add = 0.1;
+    while(i<pre){
+        while(integer*integer<=number){
+            integer += add;
+        }
+        if(integer*integer > number){
+            integer -= add;
+            add /= 10;
+        }
+        i++;
+    }
+    return integer;
+}
+
 double actualAns(int n,int count,int tempsol){
     double increment = 0.1;
     double ans = tempsol;
@@ -39,4 +56,5 @@ int main(){
     int n = 37;
     int tempsol = find(n);
     cout << "Square root is : " << actualAns(n,5,tempsol)<< endl;
+    cout << "Square root is : " << findpre(n, 5, tempsol) << endl;
 }

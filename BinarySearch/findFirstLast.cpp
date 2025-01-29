@@ -5,21 +5,20 @@ int findFirst(vector<int> &arr,int x){
     int start = 0;
     int end = arr.size() - 1;
     int first = 0;
- 
+    int mid = (start + end) / 2;
     while(start<=end){
-        int mid = (start + end) / 2;
-
         if(arr[mid]==x){
             first = mid;
-
             end = mid - 1;
         }
-
         else if(arr[mid]<x){
             start = mid + 1;
         }
-        else
+        else{
             end = mid - 1;
+        }
+            
+        mid = (start + end) / 2;
     }
     return first;
 }
@@ -27,23 +26,21 @@ int findLast(vector<int> &arr,int x){
     int start = 0;
     int end = arr.size() - 1;
     int last = 0;
-    while (start <= end)
-    {
-        int mid = (start + end) / 2;
-
-        if (arr[mid] == x)
-        {
+    int mid = (start + end) / 2;
+    while (start <= end){
+        if (arr[mid] == x){
             last = mid;
-
             start = mid + 1;
         }
 
-        else if (arr[mid] < x)
-        {
+        else if (arr[mid] < x){
             start = mid + 1;
         }
-        else
+        else{
             end = mid - 1;
+        }
+           
+        mid = (start + end) / 2;
     }
     return last;
 }

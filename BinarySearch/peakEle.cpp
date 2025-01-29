@@ -1,4 +1,6 @@
 // Peak element in Array
+// find mountain in an array
+// Approach - Comparing the Mid Element to Its Neighbors
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -20,10 +22,10 @@ int search(vector<int> arr){
         if (arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1]){
             return arr[mid];
         }
-        if (arr[mid - 1] < arr[mid])
+        if (arr[mid + 1] > arr[mid])
             start = mid + 1;
         else
-            end = mid - 1;
+            end = mid;
   }
   return -1;
 }
