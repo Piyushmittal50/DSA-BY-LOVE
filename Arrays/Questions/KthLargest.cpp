@@ -18,7 +18,7 @@ int findKth(vector<int> arr,int k){
 }
 
 int main(){
-    vector<int> arr = {1, 2, 6, 4, 5, 3};
+    vector<int> arr = {1, 2, 6, 4, 5, 3,10,15,7};
     int ans = findKth(arr, 3);
     cout << "K th largest element is : "<< ans << endl;
 }
