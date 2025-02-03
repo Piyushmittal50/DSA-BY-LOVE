@@ -10,11 +10,10 @@ void subsequence(string name,string ans,int index){
     subsequence(name, ans, index + 1);
 
     // include
-    ans = ans + name[index];
-    subsequence(name, ans, index + 1);
+    subsequence(name, ans+name[index], index + 1);
 }
 int main(){
-    string name = "ab"; // find subsequence
+    string name = "abc"; // find subsequence
     string ans = "";
     subsequence(name,ans,0);
 }

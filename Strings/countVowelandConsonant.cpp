@@ -2,27 +2,22 @@
 #include<utility>
 #include<set>
 using namespace std;
-void convert(string s)
-{
+void convert(string s){
+
     int vowels = 0, consonants = 0,extras = 0;
     string lower;
-    for (int i = 0; i <= s.length() - 1; i++)
-    {
+    for (int i = 0; i <= s.length() - 1; i++){
         lower += tolower(s[i]);
     }
     cout << lower << endl;
-    for (char ch : lower)
-    {
-        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
-        {
+    for (char ch : lower){
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
             vowels++;
         }
-        else if (ch >= 'a' && ch <= 'z')
-        {
+        else if (ch >= 'a' && ch <= 'z'){
             consonants++;
         }
-        else if(ch==' ')
-        {
+        else if(ch==' '){
             extras++;
         }
     }
@@ -30,19 +25,16 @@ void convert(string s)
     cout << "Total consonants : " << consonants << endl;
     cout << "Total extras : " << extras << endl;
 }
-void Convert(string str)
-{
+void Convert(string str){
     set<char> s = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
 
     int vowels = 0, consonants = 0, extras = 0;
   
-    for (char ch : str)
-    {
-        if (s.count(ch))
-        {
+    for (char ch : str){
+        if (s.find(ch)!=s.end()){
             vowels++;
         }
-        else if(ch >='a' && ch<='z' && ch>='A' && ch<='Z'){
+        else if(ch >='a' && ch<='z' || ch>='A' && ch<='Z' && s.find(ch)==s.end()){
             consonants++;
         }
         else{
@@ -55,6 +47,6 @@ void Convert(string str)
 }
 int main(){
     string s = "Piyush Mittal";
-    convert(s);
+    Convert(s);
 }
 
