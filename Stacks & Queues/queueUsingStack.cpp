@@ -37,16 +37,14 @@ class queue{
     }
     // top
     void top(){
-        if (!s1.empty())
-        {
+        if (!s1.empty()){
             int temp = s1.top();
             cout << temp << " : is the top most ele in queue !" << endl;
         }
     }
 
     void size(){
-        if (!s1.empty())
-        {
+        if (!s1.empty()){
             cout << "size of queue is : " <<s1.size()<< endl;
         }
     }
