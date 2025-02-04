@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-class node
-{
+class node{
 public:
     int data;
     node *next;
@@ -11,17 +10,14 @@ public:
         this->next = NULL;
     }
 };
-void insertAtTail(node *&head, node *&tail, int data)
-{
-    if (head == NULL)
-    {
+void insertAtTail(node *&head, node *&tail, int data){
+    if (head == NULL){
         node *newnode = new node(data);
         head = newnode;
         tail = newnode;
         return;
     }
-    else
-    {
+    else{
         // if head!=NULL
         node *newnode = new node(data);
         tail->next = newnode;
@@ -51,11 +47,9 @@ node* swapnodes(node* &head){
     }
     return head;
 }
-void print(node *&head)
-{
+void print(node *&head){
     node *temp = head;
-    while (temp)
-    {
+    while (temp){
         cout << temp->data << "->";
         temp = temp->next;
     }
